@@ -1,6 +1,6 @@
 # config.py with blank auth details 
 # RENAME TO config.py to make the whole thing work
-HOST = "irc.twitch.tv"
+HOST = "irc.chat.twitch.tv"
 PORT = 6667
 NAME = #bot's account name
 PASS = #your auth

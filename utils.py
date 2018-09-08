@@ -33,7 +33,6 @@ def fillModList():
 			url = "http://tmi.twitch.tv/group/user/stepacool/chatters"
 			req = requests.get(url, headers={"accept": "*/*"})
 			res = req.text
-			print(req, res, req.json())
 			if not res.find("502 Bad Gateway"):
 				config.modlist.clear()
 				data = req.json()
@@ -41,7 +40,6 @@ def fillModList():
 					config.modlist[p] = "mod"
 				for p in data["chatters"]["admins"]:
 					config.modlist[p] = "admin"
-				print(data)
 		except:
 			print("ERROR! Something went wrong.")
 		sleep(5)
