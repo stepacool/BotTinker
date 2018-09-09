@@ -33,8 +33,8 @@ def main():
 	while True:
 		response = s.recv(1024).decode('utf-8')	
 		print(response)
-		if response == "PING :tmi.twitch.tv":
-			s.send("PONG :tmi.twitch.tv").encode('utf-8')
+		if response.strip() == "PING :tmi.twitch.tv":
+			s.send("PONG :tmi.twitch.tv".encode('utf-8'))
 			print("sending PONG")
 		else:
 			message = chat_message.sub("", response).strip()
