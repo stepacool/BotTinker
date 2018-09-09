@@ -34,7 +34,7 @@ def main():
 		response = s.recv(1024).decode('utf-8')	
 		print(response)
 		if response.strip() == "PING :tmi.twitch.tv":
-			s.send("PONG :tmi.twitch.tv".encode('utf-8'))
+			s.send("PONG :tmi.twitch.tv\r\n".encode('utf-8'))
 			print("sending PONG")
 		else:
 			message = chat_message.sub("", response).strip()
